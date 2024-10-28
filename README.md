@@ -33,7 +33,7 @@
    - The program starts executing from this point when run directly.
 
 
-### Explanation of the Code: FP7ColorFullText
+### Explanation of the Code: FP7ColorFulText
 
 1. **Define Color Functions**:
    - Each function (`redText`, `blueText`, `greenText`, `yellowText`, `brownText`) takes a string as input and returns it wrapped in ANSI escape codes that change the text color when printed in a terminal that supports ANSI codes.
@@ -46,3 +46,42 @@
 3. **Input Validation**:
    - If the user enters an invalid color choice, the program informs them of the error.
 
+### Explanation of the Code: FP7BankClass
+
+1. **Class Definition**:
+   - `class BankAccount:`: Defines a class named `BankAccount`.
+   - `def __init__(self, account_number):`: This is the constructor method that initializes the account with an account number and sets the initial balance to 0.
+   - `self.account_number = account_number`: Assigns the provided account number to the instance attribute.
+   - `self.balance = 0`: Initializes the balance attribute to 0.
+
+2. **Deposit Method**:
+   - `def deposit(self, amount):`: Method to handle deposits.
+   - `if amount > 0:`: Checks if the deposit amount is positive.
+   - `self.balance += amount`: Adds the deposit amount to the balance.
+   - `print(...)`: Prints the updated balance.
+
+3. **Withdraw Method**:
+   - `def withdraw(self, amount):`: Method to handle withdrawals.
+   - `if 0 < amount <= self.balance:`: Checks if the withdrawal amount is positive and does not exceed the current balance.
+   - `self.balance -= amount`: Subtracts the withdrawal amount from the balance.
+   - `elif amount > self.balance:`: Checks for insufficient funds and informs the user.
+   - `else:`: Informs the user if the withdrawal amount is non-positive.
+
+4. **Check Balance Method**:
+   - `def check_balance(self):`: Method to return the current balance.
+   - `return f"Current balance: ${self.balance}"`: Returns the current balance as a formatted string.
+
+5. **Main Function**:
+   - `def main():`: Defines the main function to execute the program.
+   - `account_number = input(...)`: Prompts the user to enter their account number.
+   - `account = BankAccount(account_number)`: Creates an instance of `BankAccount` using the provided account number.
+   - `while True:`: Starts an indefinite loop to allow repeated actions.
+   - `print(...)`: Displays the options for the user.
+   - `choice = input(...):`: Prompts the user to choose an action.
+   - Based on the user’s choice, calls the appropriate method (deposit, withdraw, check balance) or exits the loop if the user chooses to exit.
+   - Handles invalid options by prompting the user again.
+
+6. **Execution**:
+   - `if __name__ == "__main__":`: Ensures that the `main` function runs only if the script is executed directly.
+
+This program provides a simple bank account management system that can be expanded with more features as needed.
